@@ -1,0 +1,47 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+:root {
+  color: #757575;
+  font-family: "DM Sans", sans-serif;
+  font-size: 62.5%;
+  font-weight: 400;
+  line-height: 1.2;
+}
+
+body {
+  font-size: 1.6rem;
+}
+
+.container {
+  margin: auto 2.4rem;
+}
+
+.header {
+  border-bottom: 1px solid #e3e3e3;
+}
+
+.navbar {
+  align-items: center;
+  display: flex;
+  font-size: 2.1rem;
+  height: 7.2rem;
+  justify-content: space-between;
+}
+.navbar__logo {
+  color: black;
+  font-family: "Poppins", sans-serif;
+  font-weight: 700;
+  text-decoration: none;
+}
+.navbar__logo--primary {
+  color: #ff3366;
+}
+.navbar__menu {
+  color: #ff3366;
+}
+
+/*# sourceMappingURL=style.css.map */
