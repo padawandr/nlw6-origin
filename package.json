@@ -1,0 +1,20 @@
+{
+  "name": "nlw6-origin",
+  "version": "1.0.0",
+  "description": "a hairdresser website to practice web development",
+  "main": "index.js",
+  "scripts": {
+    "sass": "sass --watch src/scss/style.scss src/css/style.css"
+  },
+  "keywords": [
+    "nlw",
+    "rocketseat",
+    "hairdresser",
+    "web development"
+  ],
+  "author": "wanderley rabelo",
+  "license": "ISC",
+  "devDependencies": {
+    "sass": "^1.35.1"
+  }
+}
