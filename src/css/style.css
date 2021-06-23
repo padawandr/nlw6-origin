@@ -9,7 +9,11 @@
   font-family: "DM Sans", sans-serif;
   font-size: 62.5%;
   font-weight: 400;
-  line-height: 1.5;
+  line-height: 1.625;
+}
+
+.icon {
+  color: #ff3366;
 }
 
 .title {
@@ -112,6 +116,7 @@ body {
   margin-top: 3.2rem;
 }
 .hero__text {
+  line-height: 1.5;
   margin-top: 1.6rem;
 }
 .hero__button {
@@ -158,6 +163,54 @@ body {
 }
 .about__text:first-of-type {
   margin-top: 1.6rem;
+}
+
+.services {
+  background: #fafafa;
+}
+.services__text {
+  margin-top: 1.6rem;
+}
+.services__text--primary {
+  color: #ff3366;
+}
+.services__deck {
+  display: grid;
+  gap: 2.4rem;
+  margin-top: 6.4rem;
+}
+
+.service {
+  align-items: center;
+  background: #fafafa;
+  border-radius: 0.4rem 0.4rem 0 0;
+  box-shadow: 0px 0px 12px rgba(0, 0, 0, 0.08);
+  display: flex;
+  flex-direction: column;
+  list-style: none;
+  padding: 5.8rem 3.2rem;
+  position: relative;
+  width: 100%;
+}
+.service::after {
+  background: #ff3366;
+  bottom: 0;
+  content: "";
+  height: 0.4rem;
+  position: absolute;
+  width: 100%;
+  z-index: 1;
+}
+.service__icon {
+  font-size: 8rem;
+}
+.service__title {
+  font-size: 2.4rem;
+  margin-top: 2.4rem;
+}
+.service__text {
+  margin-top: 1.2rem;
+  text-align: center;
 }
 
 /*# sourceMappingURL=style.css.map */
