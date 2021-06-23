@@ -23,61 +23,89 @@
 
 <body>
 
-  <header class="header">
+  <header id="header" class="header">
     <nav class="navbar container">
-      <a class="navbar__logo" href="#">beauty<span class="navbar__logo--primary">salon</span>.</a>
-      <div class="navbar__menu">...</div>
+      <a class="navbar__logo" href="#hero">beauty<span class="navbar__logo--primary">salon</span>.</a>
+      <div class="navbar__menu">
+        <i class="icon-menu navbar__open icon show"></i>
+        <i class="icon-close navbar__close icon"></i>
+        <div id="menu" class="menu">
+          <ul class="menu__list">
+            <li class="menu__item"><a class="menu__link title" href="#hero">Início</a></li>
+            <li class="menu__item"><a class="menu__link title" href="#about">Sobre</a></li>
+            <li class="menu__item"><a class="menu__link title" href="#services">Serviços</a></li>
+            <li class="menu__item"><a class="menu__link title" href="#testimonials">Depoimentos</a></li>
+            <li class="menu__item"><a class="menu__link title" href="#contact">Contato</a></li>
+          </ul>
+        </div>
+      </div>
     </nav>
   </header>
 
   <main class="main">
 
-    <section class="hero section">
+    <section id="hero" class="hero section">
       <div class="container">
         <figure class="hero__figure">
-          <img class="hero__photo" src="https://images.unsplash.com/photo-1562322140-8baeececf3df?ixid=MnwxMjA3fDB8MHxzZWFyY2h8MXx8aGFpcmRyZXNzZXJ8ZW58MHx8MHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=900&q=60" alt="cabeleireira sorrindo, secando e penteando o cabelo de uma cliente">
+          <img class="hero__photo"
+            src="https://images.unsplash.com/photo-1562322140-8baeececf3df?ixid=MnwxMjA3fDB8MHxzZWFyY2h8MXx8aGFpcmRyZXNzZXJ8ZW58MHx8MHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=900&q=60"
+            alt="cabeleireira sorrindo, secando e penteando o cabelo de uma cliente">
         </figure>
         <h2 class="hero__title title">Saúde natural para os seus cabelos</h2>
         <p class="hero__text text">Um salão exclusivo em São Paulo, especializado em tratamentos naturais.</p>
-        <a class="hero__button btn" href="#">Agendar um horário</a>
+        <a class="hero__button btn" href="#contact">Agendar um horário</a>
       </div>
     </section>
 
     <hr class="divider-1">
 
-    <section class="about section">
+    <section id="about" class="about section">
       <figure class="about__figure">
-        <img class="about__photo" src="https://images.unsplash.com/photo-1559599101-f09722fb4948?ixid=MnwxMjA3fDB8MHxzZWFyY2h8Mnx8aGFpcmRyZXNzZXJ8ZW58MHx8MHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=900&q=60" alt="três cabeleireiras sorrindo, com escovas e tesouras nas mãos">
+        <img class="about__photo"
+          src="https://images.unsplash.com/photo-1559599101-f09722fb4948?ixid=MnwxMjA3fDB8MHxzZWFyY2h8Mnx8aGFpcmRyZXNzZXJ8ZW58MHx8MHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=900&q=60"
+          alt="três cabeleireiras sorrindo, com escovas e tesouras nas mãos">
       </figure>
       <div class="container">
         <h2 class="about__title title">Sobre nós</h2>
-        <p class="about__text">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse sagittis arcu quis nisi luctus, id accumsan felis tristique. Proin quis bibendum diam. Sed consequat nisl laoreet eros ultricies pellentesque. Nullam in est porta, pellentesque massa vitae, vehicula risus.</p>
-        <p class="about__text">In placerat, felis vitae sodales dictum, lacus quam pretium mi, ut pretium urna turpis eu dui. Vestibulum id ullamcorper nibh. Donec luctus, nunc finibus elementum suscipit, tortor augue vulputate sapien, vitae feugiat enim augue sed.</p>
-        <p class="about__text">Quisque id aliquam elit. Suspendisse congue pharetra maximus. Duis rutrum velit a leo euismod dictum. Sed sodales est efficitur arcu tincidunt tincidunt. Curabitur fringilla, risus at feugiat feugiat, nisl nulla tincidunt tellus, elementum elementum lorem nisl eleifend dolor. Nullam eget dui at sem ullamcorper luctus.</p>
+        <p class="about__text">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse sagittis arcu quis
+          nisi luctus, id accumsan felis tristique. Proin quis bibendum diam. Sed consequat nisl laoreet eros ultricies
+          pellentesque. Nullam in est porta, pellentesque massa vitae, vehicula risus.</p>
+        <p class="about__text">In placerat, felis vitae sodales dictum, lacus quam pretium mi, ut pretium urna turpis eu
+          dui. Vestibulum id ullamcorper nibh. Donec luctus, nunc finibus elementum suscipit, tortor augue vulputate
+          sapien, vitae feugiat enim augue sed.</p>
+        <p class="about__text">Quisque id aliquam elit. Suspendisse congue pharetra maximus. Duis rutrum velit a leo
+          euismod dictum. Sed sodales est efficitur arcu tincidunt tincidunt. Curabitur fringilla, risus at feugiat
+          feugiat, nisl nulla tincidunt tellus, elementum elementum lorem nisl eleifend dolor. Nullam eget dui at sem
+          ullamcorper luctus.</p>
       </div>
     </section>
 
     <hr class="divider-2">
 
-    <section class="services section">
+    <section id="services" class="services section">
       <div class="container">
         <h2 class="services__title title">Serviços</h2>
-        <p class="services__text">Com mais de 10 anos no mercado, o <strong class="services__text--primary">Beautysalon</strong> já conquistou clientes de inúmeros países com seus tratamentos exclusivos e totalmente naturais</p>
+        <p class="services__text">Com mais de 10 anos no mercado, o <strong
+            class="services__text--primary">Beautysalon</strong> já conquistou clientes de inúmeros países com seus
+          tratamentos exclusivos e totalmente naturais</p>
         <ul class="services__deck">
           <li class="services__card service">
             <i class="icon-woman-hair service__icon icon"></i>
             <h3 class="service__title title">Terapia capilar</h3>
-            <p class="service__text">Terapia completa para couro cabeludo e fios, protegendo todos os tipos de cabelos, inclusive os longos e finos.</p>
+            <p class="service__text">Terapia completa para couro cabeludo e fios, protegendo todos os tipos de cabelos,
+              inclusive os longos e finos.</p>
           </li>
           <li class="services__card service">
             <i class="icon-trim service__icon icon"></i>
             <h3 class="service__title title">Cortes</h3>
-            <p class="service__text">A nossa equipe é repleta de profissionais renomados, famosos por lançarem tendências com cortes diferenciados e clássicos.</p>
+            <p class="service__text">A nossa equipe é repleta de profissionais renomados, famosos por lançarem
+              tendências com cortes diferenciados e clássicos.</p>
           </li>
           <li class="services__card service">
             <i class="icon-cosmetic service__icon icon"></i>
             <h3 class="service__title title">Tratamentos</h3>
-            <p class="service__text">O beautysalon conta com diversos tratamentos naturais e totalmente veganos, para qualquer tipo de cabelo.</p>
+            <p class="service__text">O beautysalon conta com diversos tratamentos naturais e totalmente veganos, para
+              qualquer tipo de cabelo.</p>
           </li>
         </ul>
       </div>
@@ -85,7 +113,7 @@
 
     <hr class="divider-1">
 
-    <section class="testimonials section">
+    <section id="testimonials" class="testimonials section">
       <div class="container">
         <h2 class="testimonials__title title">Depoimentos de quem já passou por aqui</h2>
       </div>
@@ -93,13 +121,16 @@
 
     <hr class="divider-2">
 
-    <section class="contact section">
+    <section id="contact" class="contact section">
       <div class="container">
         <h2 class="contact__title title">Entre em contato com a gente!</h2>
       </div>
     </section>
 
   </main>
+
+  <!-- js -->
+  <script src="./js/main.js"></script>
 
 </body>
 
