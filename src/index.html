@@ -6,6 +6,9 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
+  <!-- swiper -->
+  <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css">
+
   <!-- icomoon -->
   <link rel="stylesheet" href="./assets/icomoon/style.css">
 
@@ -41,7 +44,7 @@
       </div>
     </nav>
   </header>
-
+<!--
   <main class="main">
 
     <section id="hero" class="hero section">
@@ -114,22 +117,81 @@
     <hr class="divider-1">
 
     <section id="testimonials" class="testimonials section">
-      <div class="container">
-        <h2 class="testimonials__title title">Depoimentos de quem já passou por aqui</h2>
+      <h2 class="testimonials__title title">Depoimentos de quem já passou por aqui</h2>
+      <div class="testimonials__block swiper-container">
+        <ul class="testimonials__deck swiper-wrapper">
+          <li class="testimonial swiper-slide">
+            <figure class="testimonial__figure">
+              <blockquote class="testimonial__quote">
+                <p class="testimonial__text">
+                  <span class="testimonial__text--decoration">&ldquo;</span>
+                  Eu sou cliente do Beautysalon há 5 anos e não troco por nada! Certamente meu cabelo mudou muito
+                  depois que comecei a tratar somente com produtos naturais e veganos. São profissionais incríveis e
+                  qualificados.
+                </p>
+                <div class="testimonial__user">
+                  <img class="testimonial__photo" src="./assets/photos/9.jpg" alt="foto de wanessa souza">
+                  <figcaption class="testimonial__name">Wanessa Souza</figcaption>
+                </div>
+              </blockquote>
+            </figure>
+          </li>
+          <li class="testimonial swiper-slide">
+            <figure class="testimonial__figure">
+              <blockquote class="testimonial__quote">
+                <p class="testimonial__text">
+                  <span class="testimonial__text--decoration">&ldquo;</span>
+                  Minha mãe frequenta o salão há anos e me levou um dia para conhecer. Minha experiência foi incrível,
+                  eu continuo fazendo o a terapia capilar e isso salvou o meu cabelo. Adoro todos os profissionais do
+                  Beautysalon.
+                </p>
+                <div class="testimonial__user">
+                  <img class="testimonial__photo" src="./assets/photos/60.jpg" alt="foto de wanessa souza">
+                  <figcaption class="testimonial__name">Luna Falcão</figcaption>
+                </div>
+              </blockquote>
+            </figure>
+          </li>
+          <li class="testimonial swiper-slide">
+            <figure class="testimonial__figure">
+              <blockquote class="testimonial__quote">
+                <p class="testimonial__text">
+                  <span class="testimonial__text--decoration">&ldquo;</span>
+                  Meu dia de noiva no Beautysalon, foi incrível! Antes de fechar pesquisei bastante e me apaixonei, as
+                  noivas saem de lá poderosas. Amei o atendimento de toda equipe, a assessoria, o carinho e dedicação.
+                </p>
+                <div class="testimonial__user">
+                  <img class="testimonial__photo" src="./assets/photos/67.jpg" alt="foto de wanessa souza">
+                  <figcaption class="testimonial__name">Maria Freitas</figcaption>
+                </div>
+              </blockquote>
+            </figure>
+          </li>
+        </ul>
+        <div class="testimonials__pagination swiper-pagination"></div>
       </div>
     </section>
-
+  -->
     <hr class="divider-2">
 
     <section id="contact" class="contact section">
       <div class="container">
         <h2 class="contact__title title">Entre em contato com a gente!</h2>
+        <p class="contact__text">Entre em contato com a Beautysalon, queremos tirar suas dúvidas, ouvir suas críticas e sugestões.</p>
+        <a class="contact__button btn" href="#"><i class="icon-whatsapp"></i>Entrar em contato</a>
+        <ul class="contact__list">
+          <li class="contact__item"><i class="icon-phone icon"></i>11 99845-6754</li>
+          <li class="contact__item"><i class="icon-map-pin icon"></i>R. Amauri Souza, 346</li>
+          <li class="contact__item"><i class="icon-mail icon"></i>contato@beautysalon.com</li>
+        </ul>
       </div>
     </section>
 
   </main>
 
   <!-- js -->
+  <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
+  <script src="./js/swiper.js"></script>
   <script src="./js/main.js"></script>
 
 </body>

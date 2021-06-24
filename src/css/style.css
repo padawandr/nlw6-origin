@@ -47,8 +47,8 @@ body {
 }
 
 .container {
-  width: 87%;
   margin: auto;
+  width: 87%;
 }
 
 .header {
@@ -279,6 +279,7 @@ body {
   list-style: none;
   padding: 5.8rem 3.2rem;
   position: relative;
+  text-align: center;
   width: 100%;
 }
 .service::after {
@@ -299,7 +300,61 @@ body {
 }
 .service__text {
   margin-top: 1.2rem;
-  text-align: center;
+}
+
+.testimonials__title {
+  margin: auto;
+  width: 87%;
+}
+.testimonials__pagination {
+  position: static;
+}
+
+.testimonial {
+  list-style: none;
+  margin-top: 4rem;
+}
+.testimonial__figure {
+  margin: 2.4rem auto;
+  width: 87%;
+}
+.testimonial__quote {
+  border-radius: 0.4rem;
+  box-shadow: 0px 0px 12px rgba(0, 0, 0, 0.08);
+  padding: 3.2rem;
+}
+.testimonial__text {
+  color: black;
+  position: relative;
+  text-indent: 2.5rem;
+}
+.testimonial__text--decoration {
+  color: #ff3366;
+  font-family: sans;
+  font-size: 4.4rem;
+  left: -2.5rem;
+  position: absolute;
+  top: -1.5rem;
+}
+.testimonial__user {
+  align-items: center;
+  display: flex;
+  margin-top: 2.4rem;
+}
+.testimonial__photo {
+  border-radius: 50%;
+  width: 3.2rem;
+}
+.testimonial__name {
+  margin-left: 0.8rem;
+}
+
+.swiper-pagination-bullet {
+  height: 1rem;
+  width: 1rem;
+}
+.swiper-pagination-bullet-active {
+  background: #ff3366;
 }
 
 /*# sourceMappingURL=style.css.map */
