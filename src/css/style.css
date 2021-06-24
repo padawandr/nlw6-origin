@@ -24,6 +24,20 @@
   line-height: 1.5;
 }
 
+.btn {
+  background: #ff3366;
+  border-radius: 0.4rem;
+  color: white;
+  display: inline-flex;
+  font-weight: 500;
+  padding: 1.6rem 3.2rem;
+  text-decoration: none;
+  transition: background 0.25s;
+}
+.btn:hover {
+  background: #f77898;
+}
+
 .divider-1 {
   background: linear-gradient(270deg, #ff3366 0%, rgba(244, 205, 214, 0.34) 100%);
   border: none;
@@ -67,13 +81,13 @@ body {
 .navbar {
   align-items: center;
   display: flex;
-  font-size: 2.1rem;
   height: 7.2rem;
   justify-content: space-between;
 }
 .navbar__logo {
   color: black;
   font-family: "Poppins", sans-serif;
+  font-size: 2.1rem;
   font-weight: 700;
   text-decoration: none;
 }
@@ -205,18 +219,7 @@ body {
   margin-top: 1.6rem;
 }
 .hero__button {
-  background: #ff3366;
-  border-radius: 0.4rem;
-  color: white;
-  display: inline-flex;
-  font-weight: 500;
   margin-top: 3.6rem;
-  padding: 1.6rem 3.2rem;
-  text-decoration: none;
-  transition: background 0.25s;
-}
-.hero__button:hover {
-  background: #f77898;
 }
 
 .about {
@@ -355,6 +358,97 @@ body {
 }
 .swiper-pagination-bullet-active {
   background: #ff3366;
+}
+
+.contact {
+  background: #fafafa;
+}
+.contact__text {
+  margin-top: 1.6rem;
+}
+.contact__button {
+  margin-top: 3.2rem;
+}
+.contact__icon {
+  font-size: 2.4rem;
+  margin-right: 1rem;
+}
+.contact__list {
+  display: grid;
+  gap: 3.2rem;
+  margin-top: 6.4rem;
+}
+.contact__item {
+  align-items: center;
+  display: flex;
+  line-height: 0;
+  list-style: none;
+}
+
+.footer {
+  background: #ff3366;
+  color: #fafafa;
+  padding: 6.4rem 0;
+}
+.footer__logo {
+  color: black;
+  font-family: "Poppins", sans-serif;
+  font-size: 2.1rem;
+  font-weight: 700;
+  text-decoration: none;
+}
+.footer__logo--lightest {
+  color: #fafafa;
+}
+.footer__copyright {
+  margin-top: 2.4rem;
+}
+.footer__rights {
+  margin-top: 1.2rem;
+}
+.footer__networks {
+  display: flex;
+  gap: 3.2rem;
+  margin-top: 3.2rem;
+}
+.footer__social {
+  list-style: none;
+}
+.footer__link {
+  font-size: 2.4rem;
+  text-decoration: none;
+}
+.footer__icon {
+  color: #fafafa;
+}
+
+.go-top {
+  bottom: 2rem;
+  position: fixed;
+  opacity: 0;
+  right: 6.5%;
+  transform: translateY(100%);
+  transition: opacity 0.25s, transform 0.25s, visibility 0.25s;
+  visibility: 0;
+  z-index: 100;
+}
+.go-top.show {
+  opacity: 1;
+  transform: translateY(0);
+  visibility: 1;
+}
+.go-top__link {
+  align-items: center;
+  background: #f77898;
+  border-radius: 50%;
+  display: inline-flex;
+  justify-content: center;
+  padding: 0.8rem;
+  text-decoration: none;
+}
+.go-top__icon {
+  color: white;
+  font-size: 2.4rem;
 }
 
 /*# sourceMappingURL=style.css.map */

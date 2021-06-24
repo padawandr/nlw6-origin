@@ -28,13 +28,13 @@
 
   <header id="header" class="header">
     <nav class="navbar container">
-      <a class="navbar__logo" href="#hero">beauty<span class="navbar__logo--primary">salon</span>.</a>
+      <a class="navbar__logo" href="#">beauty<span class="navbar__logo--primary">salon</span>.</a>
       <div class="navbar__menu">
         <i class="icon-menu navbar__open icon show"></i>
         <i class="icon-close navbar__close icon"></i>
         <div id="menu" class="menu">
           <ul class="menu__list">
-            <li class="menu__item"><a class="menu__link title" href="#hero">Início</a></li>
+            <li class="menu__item"><a class="menu__link title" href="#">Início</a></li>
             <li class="menu__item"><a class="menu__link title" href="#about">Sobre</a></li>
             <li class="menu__item"><a class="menu__link title" href="#services">Serviços</a></li>
             <li class="menu__item"><a class="menu__link title" href="#testimonials">Depoimentos</a></li>
@@ -44,7 +44,7 @@
       </div>
     </nav>
   </header>
-<!--
+
   <main class="main">
 
     <section id="hero" class="hero section">
@@ -171,27 +171,63 @@
         <div class="testimonials__pagination swiper-pagination"></div>
       </div>
     </section>
-  -->
+
     <hr class="divider-2">
 
     <section id="contact" class="contact section">
       <div class="container">
         <h2 class="contact__title title">Entre em contato com a gente!</h2>
         <p class="contact__text">Entre em contato com a Beautysalon, queremos tirar suas dúvidas, ouvir suas críticas e sugestões.</p>
-        <a class="contact__button btn" href="#"><i class="icon-whatsapp"></i>Entrar em contato</a>
+        <a class="contact__button btn" href="https://api.whatsapp.com/send?phone=+551195555-5555&text=Olá!%20Eu%20gostaria%20de%20agendar%20um%20horário." target="_blank"><i class="icon-whatsapp contact__icon"></i>Entrar em contato</a>
         <ul class="contact__list">
-          <li class="contact__item"><i class="icon-phone icon"></i>11 99845-6754</li>
-          <li class="contact__item"><i class="icon-map-pin icon"></i>R. Amauri Souza, 346</li>
-          <li class="contact__item"><i class="icon-mail icon"></i>contato@beautysalon.com</li>
+          <li class="contact__item">
+            <i class="icon-phone contact__icon icon"></i>
+            <span>11 95555-5555</span>
+          </li>
+          <li class="contact__item">
+            <i class="icon-map-pin contact__icon icon"></i>
+            <span>R. Amauri Souza, 346</span>
+          </li>
+          <li class="contact__item">
+            <i class="icon-mail contact__icon icon"></i>
+            <span>contato@beautysalon.com</span>
+          </li>
         </ul>
       </div>
     </section>
 
   </main>
 
-  <!-- js -->
+  <footer class="footer">
+    <div class="container">
+      <a class="footer__logo" href="#">beauty<span class="footer__logo--lightest">salon</span>.</a>
+      <p class="footer__copyright">©2021 Beautysalon.</p>
+      <p class="footer__rights">Todos os direitos reservados.</p>
+      <ul class="footer__networks">
+        <li class="footer__social">
+          <a class="footer__link" href="#"><i class="icon-instagram footer__icon"></i></a>
+        </li>
+        <li class="footer__social">
+          <a class="footer__link" href="#"><i class="icon-facebook footer__icon"></i></a>
+        </li>
+        <li class="footer__social">
+          <a class="footer__link" href="#"><i class="icon-youtube footer__icon"></i></a>
+        </li>
+      </ul>
+    </div>
+  </footer>
+
+  <div class="go-top">
+    <a class="go-top__link" href="#"><i class="icon-arrow-up go-top__icon"></i></a>
+  </div>
+
+  <!-- scrollreveal -->
+  <script src="https://unpkg.com/scrollreveal"></script>
+  <script src="./js/scroll-reveal.js"></script>
+  <!-- swiper -->
   <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
   <script src="./js/swiper.js"></script>
+  <!-- js -->
   <script src="./js/main.js"></script>
 
 </body>

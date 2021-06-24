@@ -1,4 +1,3 @@
-const header = document.querySelector('#header')
 const menu = document.querySelector('#menu')
 const links = document.querySelectorAll('.menu__link')
 const toggle = document.querySelectorAll('.navbar .icon')
@@ -17,17 +16,34 @@ for (const link of links) {
   })
 }
 
-const navHeight = header.offsetHeight
 window.addEventListener('scroll', () => {
-  if (window.scrollY >= navHeight) {
-    header.classList.add('scroll')
-  } else {
-    header.classList.remove('scroll')
-  }
+  addHeaderShadow()
+  showGoTopButton()
 })
 
 function toggleIcons() {
   toggle.forEach((icon) => {
     icon.classList.toggle('show')
   })
+}
+
+function addHeaderShadow() {
+  const header = document.querySelector('#header')
+  const navHeight = header.offsetHeight
+
+  if (window.scrollY >= navHeight) {
+    header.classList.add('scroll')
+  } else {
+    header.classList.remove('scroll')
+  }
+}
+
+function showGoTopButton() {
+  const button = document.querySelector('.go-top')
+
+  if (window.scrollY >= 560) {
+    button.classList.add('show')
+  } else {
+    button.classList.remove('show')
+  }
 }
