@@ -415,8 +415,26 @@ body {
   list-style: none;
 }
 .footer__link {
+  display: inline-block;
   font-size: 2.4rem;
+  position: relative;
   text-decoration: none;
+}
+.footer__link::after {
+  background: white;
+  background: linear-gradient(90deg, #ff3366 0%, #fafafa 100%);
+  border-radius: 5rem;
+  bottom: 0;
+  content: "";
+  height: 0.2rem;
+  left: 0;
+  position: absolute;
+  transition: width 0.25s;
+  width: 0%;
+  z-index: 100;
+}
+.footer__link:hover::after {
+  width: 100%;
 }
 .footer__icon {
   color: #fafafa;
