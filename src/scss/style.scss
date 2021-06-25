@@ -1,42 +1,40 @@
-$hue: 345;
-$color-black: hsl(0, 0%, 0%);
-$color-bright: hsl(0, 0%, 100%);
-$color-primary: hsl($hue, 100%, 60%);
-$color-primary-light: hsl($hue, 89%, 72%);
-$color-neutral: hsl(0, 0%, 46%);
-$color-neutral-light: hsl(0, 0%, 89%);
-$color-neutral-lightest: hsl(0, 0%, 98%);
-
-* {
-  box-sizing: border-box;
-  margin: 0;
-  padding: 0;
+@mixin section {
+  padding: 8rem 0;
 }
 
-:root {
-  color: $color-neutral;
+@mixin container {
+  margin: auto;
+  width: var(--container-size);
+}
+
+@mixin text {
+  color: var(--color-neutral);
   font-family: 'DM Sans', sans-serif;
-  font-size: 62.5%;
+  font-size: var(--font-size);
   font-weight: 400;
   line-height: 1.625;
 }
 
-.icon {
-  color: $color-primary;
-}
-
-.title {
-  color: $color-black;
+@mixin title {
+  color: var(--color-black);
   font-family: 'Poppins', sans-serif;
-  font-size: 3rem;
+  font-size: var(--title-size);
   font-weight: 700;
   line-height: 1.5;
 }
 
-.btn {
-  background: $color-primary;
-  border-radius: .4rem;
-  color: $color-bright;
+@mixin logo {
+  color: var(--color-black);
+  font-family: 'Poppins', sans-serif;
+  font-size: 2.1rem;
+  font-weight: 700;
+  text-decoration: none;
+}
+
+@mixin button {
+  background: var(--color-primary);
+  border-radius: var(--border-radius);
+  color: var(--color-bright);
   display: inline-flex;
   font-weight: 500;
   padding: 1.6rem 3.2rem;
@@ -44,21 +42,53 @@ $color-neutral-lightest: hsl(0, 0%, 98%);
   transition: background .25s;
 
   &:hover {
-    background: $color-primary-light;
+    background: var(--color-primary-light);
   }
 }
 
-.divider-1 {
-  background: linear-gradient(270deg, $color-primary 0%, hsla($hue, 65%, 88%, 0.34) 100%);
-  border: none;
-  height: 1px;
-  width: 100%;
+@mixin icon {
+  color: var(--color-primary);
+  font-size: var(--icon-size);
 }
-.divider-2 {
-  background: linear-gradient(90deg, $color-primary 0%, hsla($hue, 65%, 88%, 0.34) 100%);
-  border: none;
-  height: 1px;
-  width: 100%;
+
+//===== RESET =====------------------------------//
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+a {
+  text-decoration: none;
+}
+
+li {
+  list-style: none;
+}
+
+//===== BASE =====------------------------------//
+:root {
+  --hue: 345;
+  --color-black: hsl(0, 0%, 0%);
+  --color-bright: hsl(0, 0%, 100%);
+  --color-primary: hsl(var(--hue), 100%, 60%);
+  --color-primary-light: hsl(var(--hue), 89%, 72%);
+  --color-neutral: hsl(0, 0%, 46%);
+  --color-neutral-light: hsl(0, 0%, 89%);
+  --color-neutral-lightest: hsl(0, 0%, 98%);
+
+  font-size: 62.5%;
+  --font-size: 1.6rem;
+  --title-size: 3rem;
+  --icon-size: 2.4rem;
+
+  --container-size: 87%;
+  --horizontal-offset: 6.5%;
+  --vertical-offset: 2.1rem;
+
+  --border-radius: .4rem;
+
+  --box-shadow: 0px 0px 12px rgba(0, 0, 0, 0.08);
 }
 
 html {
@@ -66,26 +96,38 @@ html {
 }
 
 body {
-  font-size: 1.6rem;
+  @include text;
 }
 
 .container {
-  margin: auto;
-  width: 87%;
+  @include container;
 }
 
-//===== HEADER =====//
+.divider-1 {
+  background: linear-gradient(270deg, var(--color-primary) 0%, hsla(var(--hue), 65%, 88%, 0.34) 100%);
+  border: none;
+  height: 1px;
+  width: 100%;
+}
+
+.divider-2 {
+  background: linear-gradient(90deg, var(--color-primary) 0%, hsla(var(--hue), 65%, 88%, 0.34) 100%);
+  border: none;
+  height: 1px;
+  width: 100%;
+}
+
+//===== HEADER =====------------------------------//
 .header {
-  color: crimson;
-  background: $color-neutral-lightest;
-  border-bottom: 1px solid $color-neutral-light;
+  background: var(--color-neutral-lightest);
+  border-bottom: .1rem solid var(--color-neutral-light);
   position: fixed;
   top: 0;
   width: 100%;
   z-index: 10;
 
   &.scroll {
-    box-shadow: 0px 0px 12px rgba(0, 0, 0, 0.08);
+    box-shadow: var(--box-shadow);
   }
 }
 
@@ -96,20 +138,18 @@ body {
   justify-content: space-between;
 
   &__logo {
-    color: $color-black;
-    font-family: 'Poppins', sans-serif;
-    font-size: 2.1rem;
-    font-weight: 700;
-    text-decoration: none;
+    @include logo;
 
     &--primary {
-      color: $color-primary;
+      color: var(--color-primary);
     }
   }
 
   &__open {
+    @include icon;
+
     cursor: pointer;
-    font-size: 2.4rem;
+    font-size: var(--icon-size);
     opacity: 0;
     position: relative;
     top: 2.1rem;
@@ -124,11 +164,13 @@ body {
   }
 
   &__close {
+    @include icon;
+
     cursor: pointer;
-    font-size: 2.4rem;
+    font-size: var(--icon-size);
     opacity: 0;
     position: absolute;
-    right: 6.5vw;
+    right: var(--horizontal-offset);
     top: 0;
     transition: opacity .25s, top .25s, visibility .25s;
     visibility: hidden;
@@ -143,7 +185,7 @@ body {
 }
 
 .menu {
-  background-color: $color-bright;
+  background-color: var(--color-bright);
   height: 100vh;
   left: 0;
   opacity: 0;
@@ -169,17 +211,14 @@ body {
     padding: 10rem 0;
   }
 
-  &__item {
-    list-style: none;
-  }
-
   &__link {
+    @include title;
+
     position: relative;
-    text-decoration: none;
     transition: color .25s;
 
     &::after {
-      background: $color-primary;
+      background: var(--color-primary);
       border-radius: 5rem;
       bottom: 0;
       content: '';
@@ -191,7 +230,7 @@ body {
     }
 
     &:hover {
-      color: $color-primary;
+      color: var(--color-primary);
 
       &::after {
         width: 100%;
@@ -200,19 +239,17 @@ body {
   }
 }
 
-//===== MAIN =====//
+//===== MAIN =====------------------------------//
 .main {
   margin-top: 7.2rem;
 }
 
-//===== SECTION =====//
-.section {
-  padding: 8rem 0;
-}
-
-//===== HERO =====//
+//===== HERO =====------------------------------//
 .hero {
-  background: $color-neutral-lightest;
+  @include section;
+  $photo-size: min(103%, 56rem);
+
+  background: var(--color-neutral-lightest);
   overflow: hidden;
   padding: 7.2rem 0 8rem;
   text-align: center;
@@ -224,24 +261,25 @@ body {
     z-index: 1;
 
     &::before {
-      background-color: $color-primary;
-      border-radius: .4rem;
+      background-color: var(--color-primary-light);
+      border-radius: var(--border-radius);
       bottom: 15%;
       content: '';
-      height: 103%;
+      height: $photo-size;
       left: 16%;
       position: absolute;
-      width: 103%;
+      width: $photo-size;
       z-index: -1;
     }
   }
 
   &__photo {
-    border-radius: .4rem;
-    width: 103%;
+    border-radius: var(--border-radius);
+    width: $photo-size;
   }
 
   &__title {
+    @include title;
     margin-top: 3.2rem;
   }
 
@@ -251,12 +289,17 @@ body {
   }
 
   &__button {
+    @include button;
+
     margin-top: 3.6rem;
   }
 }
 
-//===== ABOUT =====//
+//===== ABOUT =====------------------------------//
 .about {
+  @include section;
+  $photo-size: min(103%, 61.5rem);
+
   overflow: hidden;
 
   &__figure {
@@ -266,62 +309,69 @@ body {
     z-index: 1;
 
     &::before {
-      background-color: $color-primary;
-      border-radius: .4rem;
+      background-color: var(--color-primary-light);
+      border-radius: var(--border-radius);
       bottom: 6%;
       content: '';
-      height: 103%;
+      height: $photo-size;
       position: absolute;
       right: 30%;
-      width: 103%;
+      width: $photo-size;
       z-index: -1;
     }
   }
 
   &__photo {
-    border-radius: .4rem;
-    width: 103%;
+    border-radius: var(--border-radius);
+    width: $photo-size;
   }
 
   &__title {
+    @include title;
     margin-top: 3.2rem;
   }
 
   &__text {
-    line-height: 1.6;
     margin-top: 2.8rem;
   }
 
   &__text:first-of-type {
     margin-top: 1.6rem;
   }
-
 }
 
-//===== SERVICES =====//
+//===== SERVICES =====------------------------------//
 .services {
-  background: $color-neutral-lightest;
+  @include section;
+
+  background: var(--color-neutral-lightest);
+
+  &__title {
+    @include title;
+  }
 
   &__text {
     margin-top: 1.6rem;
 
     &--primary {
-      color: $color-primary;
+      color: var(--color-primary);
     }
   }
 
   &__deck {
-    display: grid;
+    display: flex;
+    flex-direction: column;
     gap: 2.4rem;
+    justify-content: center;
     margin-top: 6.4rem;
   }
 }
 
 .service {
   align-items: center;
-  background: $color-neutral-lightest;
-  border-radius: .4rem .4rem 0 0;
-  box-shadow: 0px 0px 12px rgba(0, 0, 0, 0.08);
+  background: var(--color-neutral-lightest);
+  border-radius: var(--border-radius) var(--border-radius) 0 0;
+  box-shadow: var(--box-shadow);
   display: flex;
   flex-direction: column;
   list-style: none;
@@ -331,20 +381,23 @@ body {
   width: 100%;
 
   &::after {
-    background: $color-primary;
+    background: var(--color-primary);
     bottom: 0;
     content: '';
     height: .4rem;
+    left: 0;
     position: absolute;
     width: 100%;
     z-index: 1;
   }
 
   &__icon {
+    @include icon;
     font-size: 8rem;
   }
 
   &__title {
+    @include title;
     font-size: 2.4rem;
     margin-top: 2.4rem;
   }
@@ -354,12 +407,13 @@ body {
   }
 }
 
-//===== TESTIMONIALS =====//
+//===== TESTIMONIALS =====------------------------------//
 .testimonials {
+  @include section;
 
   &__title {
-    margin: auto;
-    width: 87%;
+    @include title;
+    @include container;
   }
 
   &__pagination {
@@ -369,19 +423,18 @@ body {
 
 .testimonial {
   display: grid;
-  list-style: none;
   margin-top: 4rem;
   height: auto;
 
   &__figure {
     margin: 2.4rem auto;
-    width: 87%;
+    width: var(--container-size);
   }
 
   &__quote {
     background: white;
-    border-radius: .4rem;
-    box-shadow: 0px 0px 12px rgba(0, 0, 0, 0.08);
+    border-radius: var(--border-radius);
+    box-shadow: var(--box-shadow);
     display: flex;
     flex-direction: column;
     height: 100%;
@@ -390,12 +443,12 @@ body {
   }
 
   &__text {
-    color: $color-black;
+    color: var(--color-black);
     position: relative;
     text-indent: 2.5rem;
 
     &--decoration {
-      color: $color-primary;
+      color: var(--color-primary);
       font-family: sans;
       font-size: 4.4rem;
       left: -2.5rem;
@@ -425,25 +478,40 @@ body {
   width: 1rem;
 
   &-active {
-    background: $color-primary;
+    background: var(--color-primary);
   }
 }
 
-//===== CONTACT =====//
+//===== CONTACT =====------------------------------//
 .contact {
-  background: $color-neutral-lightest;
+  @include section;
+
+  background: var(--color-neutral-lightest);
+
+  &__title {
+    @include title;
+  }
 
   &__text {
     margin-top: 1.6rem;
   }
 
   &__button {
+    @include button;
+
     margin-top: 3.2rem;
+
+    &--mod {
+      font-size: var(--icon-size);
+      margin-right: 1rem;
+    }
   }
 
   &__icon {
-    font-size: 2.4rem;
-    margin-right: 1rem;
+    @include icon;
+
+    font-size: var(--icon-size);
+    margin-right: 1.2rem;
   }
 
   &__list {
@@ -456,25 +524,20 @@ body {
     align-items: center;
     display: flex;
     line-height: 0;
-    list-style: none;
   }
 }
 
-//===== FOOTER =====//
+//===== FOOTER =====------------------------------//
 .footer {
-  background: $color-primary;
-  color: $color-neutral-lightest;
+  background: var(--color-primary);
+  color: var(--color-neutral-lightest);
   padding: 6.4rem 0;
 
   &__logo {
-    color: $color-black;
-    font-family: 'Poppins', sans-serif;
-    font-size: 2.1rem;
-    font-weight: 700;
-    text-decoration: none;
+    @include logo;
 
     &--lightest {
-      color: $color-neutral-lightest;
+      color: var(--color-neutral-lightest);
     }
   }
 
@@ -484,6 +547,7 @@ body {
 
   &__rights {
     margin-top: 1.2rem;
+    font-size: var(--font-size);
   }
 
   &__networks {
@@ -498,13 +562,12 @@ body {
 
   &__link {
     display: inline-block;
-    font-size: 2.4rem;
+    font-size: var(--icon-size);
     position: relative;
-    text-decoration: none;
 
     &::after {
-      background: $color-bright;
-      background: linear-gradient(90deg, $color-primary 0%, $color-neutral-lightest 100%);
+      background: var(--color-bright);
+      background: linear-gradient(90deg, var(--color-primary) 0%, var(--color-neutral-lightest) 100%);
       border-radius: 5rem;
       bottom: 0;
       content: '';
@@ -525,20 +588,21 @@ body {
   }
 
   &__icon {
-    color: $color-neutral-lightest;
+    @include icon;
+    color: var(--color-neutral-lightest);
   }
 }
 
-//===== GO-TOP =====//
+//===== GO-TOP =====------------------------------//
 .go-top {
-  bottom: 2rem;
+  bottom: var(--vertical-offset);
   position: fixed;
   opacity: 0;
-  right: 6.5%;
+  right: var(--horizontal-offset);
   transform: translateY(100%);
   transition: opacity .25s, transform .25s, visibility .25s;
   visibility: 0;
-  z-index: 100;
+  z-index: 40;
 
   &.show {
     opacity: 1;
@@ -548,16 +612,47 @@ body {
 
   &__link {
     align-items: center;
-    background: $color-primary-light;
+    background: var(--color-primary-light);
     border-radius: 50%;
     display: inline-flex;
     justify-content: center;
     padding: .8rem;
-    text-decoration: none;
   }
 
   &__icon {
-    color: $color-bright;
-    font-size: 2.4rem;
+    @include icon;
+    color: var(--color-bright);
   }
+}
+
+//===== MEDIA QUERIES =====------------------------------//
+@media screen and (min-width: 667px) {
+
+  .services {
+    &__deck {
+      flex-direction: row;
+      flex-wrap: wrap;
+    }
+  }
+
+  .service {
+    flex: 1;
+    min-width: 40%;
+  }
+
+}
+
+@media screen and (min-width: 768px) {
+
+  // .services {
+  //   &__deck {
+  //     flex-wrap: nowrap;
+  //   }
+  // }
+
+  // .service {
+  //   flex: 1;
+  //   min-width: 0;
+  // }
+
 }
