@@ -10,9 +10,11 @@ for (const element of toggle) {
 }
 
 for (const link of links) {
-  link.addEventListener('click', () => {
+  link.addEventListener('click', (e) => {
     menu.classList.remove('show')
     toggleIcons()
+
+    scrollToTargetAdjusted(e.target.name)
   })
 }
 
@@ -36,6 +38,14 @@ function addHeaderShadow() {
   } else {
     header.classList.remove('scroll')
   }
+}
+
+function scrollToTargetAdjusted(id) {
+  const element = document.querySelector(id)
+  const elementPosition = element.getBoundingClientRect().top
+  const offsetPosition = elementPosition - 40
+
+  window.scrollBy({ top: offsetPosition })
 }
 
 function showGoTopButton() {
