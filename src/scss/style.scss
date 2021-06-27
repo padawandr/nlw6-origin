@@ -1,10 +1,16 @@
 @mixin section {
-  padding: 8rem 0;
+  padding: var(--section-padding) 0;
 }
 
 @mixin container {
   margin: auto;
-  width: var(--container-size);
+  width: min(var(--container-size), 112rem);
+}
+
+@mixin center {
+  margin-left: auto;
+  margin-right: auto;
+  text-align: center;
 }
 
 @mixin text {
@@ -86,6 +92,8 @@ li {
   --horizontal-offset: 6.5%;
   --vertical-offset: 2.1rem;
 
+  --section-padding: 8rem;
+
   --border-radius: .4rem;
 
   --box-shadow: 0px 0px 12px rgba(0, 0, 0, 0.08);
@@ -99,7 +107,7 @@ body {
   @include text;
 }
 
-.container {
+.container { //remover
   @include container;
 }
 
@@ -246,18 +254,26 @@ body {
 
 //===== HERO =====------------------------------//
 .hero {
-  @include section;
-  $photo-size: min(103%, 56rem);
+  $photo-size: 103%;
+  $photo-max-size: 56rem;
 
+  @include section;
   background: var(--color-neutral-lightest);
   overflow: hidden;
   padding: 7.2rem 0 8rem;
-  text-align: center;
+
+  &__block {
+    display: flex;
+    flex-direction: column;
+  }
 
   &__figure {
+    @include center;
     line-height: 0;
+    max-width: $photo-max-size;
     position: relative;
     right: 10%;
+    width: $photo-size;
     z-index: 1;
 
     &::before {
@@ -265,32 +281,43 @@ body {
       border-radius: var(--border-radius);
       bottom: 15%;
       content: '';
-      height: $photo-size;
+      height: 100%;
       left: 16%;
       position: absolute;
-      width: $photo-size;
+      width: 100%;
       z-index: -1;
     }
   }
 
   &__photo {
     border-radius: var(--border-radius);
+    max-width: $photo-max-size;
     width: $photo-size;
+  }
+
+  &__info {
+    @include container;
+    align-items: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    text-align: center;
   }
 
   &__title {
     @include title;
     margin-top: 3.2rem;
+    max-width: 33rem;
   }
 
   &__text {
     line-height: 1.5;
     margin-top: 1.6rem;
+    max-width: 30rem;
   }
 
   &__button {
     @include button;
-
     margin-top: 3.6rem;
   }
 }
@@ -298,14 +325,20 @@ body {
 //===== ABOUT =====------------------------------//
 .about {
   @include section;
-  $photo-size: min(103%, 61.5rem);
+  $photo-size: 103%;
+  $photo-max-size: 61.5rem;
 
+  display: flex;
+  flex-direction: column;
+  gap: 3.2rem;
   overflow: hidden;
 
   &__figure {
     line-height: 0;
+    max-width: $photo-max-size;
     position: relative;
     right: 3%;
+    width: $photo-size;
     z-index: 1;
 
     &::before {
@@ -313,22 +346,26 @@ body {
       border-radius: var(--border-radius);
       bottom: 6%;
       content: '';
-      height: $photo-size;
+      height: 100%;
       position: absolute;
       right: 30%;
-      width: $photo-size;
+      width: 100%;
       z-index: -1;
     }
   }
 
   &__photo {
     border-radius: var(--border-radius);
+    max-width: $photo-max-size;
     width: $photo-size;
+  }
+
+  &__block {
+    @include container();
   }
 
   &__title {
     @include title;
-    margin-top: 3.2rem;
   }
 
   &__text {
@@ -346,12 +383,19 @@ body {
 
   background: var(--color-neutral-lightest);
 
+  &__block {
+    @include container();
+    display: flex;
+    flex-direction: column;
+  }
+
   &__title {
     @include title;
   }
 
   &__text {
     margin-top: 1.6rem;
+    max-width: 52rem;
 
     &--primary {
       color: var(--color-primary);
@@ -413,7 +457,13 @@ body {
 
   &__title {
     @include title;
-    @include container;
+    margin-left: var(--horizontal-offset);
+    max-width: 40rem;
+    width: var(--container-size);
+  }
+
+  &__block {
+    margin-top: 4rem;
   }
 
   &__pagination {
@@ -423,7 +473,6 @@ body {
 
 .testimonial {
   display: grid;
-  margin-top: 4rem;
   height: auto;
 
   &__figure {
@@ -432,7 +481,6 @@ body {
   }
 
   &__quote {
-    background: white;
     border-radius: var(--border-radius);
     box-shadow: var(--box-shadow);
     display: flex;
@@ -485,15 +533,20 @@ body {
 //===== CONTACT =====------------------------------//
 .contact {
   @include section;
-
   background: var(--color-neutral-lightest);
+
+  &__block {
+    @include container();
+  }
 
   &__title {
     @include title;
+    max-width: 27rem;
   }
 
   &__text {
     margin-top: 1.6rem;
+    max-width: 36rem;
   }
 
   &__button {
@@ -515,7 +568,8 @@ body {
   }
 
   &__list {
-    display: grid;
+    display: flex;
+    flex-direction: column;
     gap: 3.2rem;
     margin-top: 6.4rem;
   }
@@ -532,6 +586,10 @@ body {
   background: var(--color-primary);
   color: var(--color-neutral-lightest);
   padding: 6.4rem 0;
+
+  &__block {
+    @include container();
+  }
 
   &__logo {
     @include logo;
@@ -644,15 +702,107 @@ body {
 
 @media screen and (min-width: 768px) {
 
-  // .services {
-  //   &__deck {
-  //     flex-wrap: nowrap;
-  //   }
-  // }
+  .testimonials {
+    &__title {
+      margin: 0 auto;
+      text-align: center;
+    }
 
-  // .service {
-  //   flex: 1;
-  //   min-width: 0;
-  // }
+    &__block {
+      width: var(--container-size);
+    }
+  }
+
+  .testimonial {
+    &__figure {
+      width: 90%;
+    }
+  }
+
+}
+
+@media screen and (min-width: 1024px) {
+
+  :root {
+    --title-size: 3.6rem;
+    --section-padding: 12rem;
+  }
+
+  .subtitle {
+    font-size: 1.8rem;
+  }
+
+  .hero {
+    &__block {
+      @include container();
+      align-items: center;
+      flex-direction: row-reverse;
+      justify-content: space-between;
+    }
+
+    &__info {
+      align-items: flex-start;
+      text-align: left;
+      width: 100%;
+    }
+
+    &__title {
+      margin-top: 0;
+    }
+  }
+
+  .about {
+    flex-direction: row;
+    align-items: flex-start;
+
+    &__figure {
+      flex: 1;
+    }
+
+    &__block {
+      flex: 1;
+    }
+
+    &__text {
+      width: 80%;
+    }
+  }
+
+  .services {
+
+    &__block {
+      align-items: center;
+      text-align: center;
+    }
+
+    &__deck {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+    }
+  }
+
+  .service {
+    min-width: none;
+  }
+
+  .contact {
+    &__block {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+    }
+
+    &__list {
+      justify-content: center;
+      margin: 0;
+      margin-left: 6.4rem;
+    }
+  }
+
+  .footer {
+    &__block {
+      display: flex;
+      justify-content: space-between;
+    }
+  }
 
 }

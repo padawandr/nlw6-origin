@@ -48,15 +48,17 @@
   <main class="main">
 
     <section id="hero" class="hero">
-      <div class="container">
+      <div class="hero__block">
         <figure class="hero__figure">
           <img class="hero__photo"
             src="https://images.unsplash.com/photo-1562322140-8baeececf3df?ixid=MnwxMjA3fDB8MHxzZWFyY2h8MXx8aGFpcmRyZXNzZXJ8ZW58MHx8MHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=900&q=60"
             alt="cabeleireira sorrindo, secando e penteando o cabelo de uma cliente">
         </figure>
-        <h2 class="hero__title">Saúde natural para os seus cabelos</h2>
-        <p class="hero__text text">Um salão exclusivo em São Paulo, especializado em tratamentos naturais.</p>
-        <a class="hero__button" href="#contact">Agendar um horário</a>
+        <div class="hero__info">
+          <h2 class="hero__title">Saúde natural para os seus cabelos</h2>
+          <p class="hero__text subtitle">Um salão exclusivo em São Paulo, especializado em tratamentos naturais.</p>
+          <a class="hero__button" href="#contact">Agendar um horário</a>
+        </div>
       </div>
     </section>
 
@@ -68,7 +70,7 @@
           src="https://images.unsplash.com/photo-1559599101-f09722fb4948?ixid=MnwxMjA3fDB8MHxzZWFyY2h8Mnx8aGFpcmRyZXNzZXJ8ZW58MHx8MHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=900&q=60"
           alt="três cabeleireiras sorrindo, com escovas e tesouras nas mãos">
       </figure>
-      <div class="container">
+      <div class="about__block">
         <h2 class="about__title">Sobre nós</h2>
         <p class="about__text">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse sagittis arcu quis
           nisi luctus, id accumsan felis tristique. Proin quis bibendum diam. Sed consequat nisl laoreet eros ultricies
@@ -86,9 +88,9 @@
     <hr class="divider-2">
 
     <section id="services" class="services">
-      <div class="container">
+      <div class="services__block">
         <h2 class="services__title">Serviços</h2>
-        <p class="services__text">Com mais de 10 anos no mercado, o <strong
+        <p class="services__text subtitle">Com mais de 10 anos no mercado, o <strong
             class="services__text--primary">Beautysalon</strong> já conquistou clientes de inúmeros países com seus
           tratamentos exclusivos e totalmente naturais</p>
         <ul class="services__deck">
@@ -175,10 +177,12 @@
     <hr class="divider-2">
 
     <section id="contact" class="contact">
-      <div class="container">
-        <h2 class="contact__title">Entre em contato com a gente!</h2>
-        <p class="contact__text">Entre em contato com a Beautysalon, queremos tirar suas dúvidas, ouvir suas críticas e sugestões.</p>
-        <a class="contact__button" href="https://api.whatsapp.com/send?phone=+5561955555555&text=Olá!%20Eu%20gostaria%20de%20agendar%20um%20horário." target="_blank"><i class="icon-whatsapp contact__button--mod"></i>Entrar em contato</a>
+      <div class="contact__block">
+        <div class="contact__info">
+          <h2 class="contact__title">Entre em contato com a gente!</h2>
+          <p class="contact__text subtitle">Entre em contato com a Beautysalon, queremos tirar suas dúvidas, ouvir suas críticas e sugestões.</p>
+          <a class="contact__button" href="https://api.whatsapp.com/send?phone=+5561955555555&text=Olá!%20Eu%20gostaria%20de%20agendar%20um%20horário." target="_blank"><i class="icon-whatsapp contact__button--mod"></i>Entrar em contato</a>
+        </div>
         <ul class="contact__list">
           <li class="contact__item">
             <i class="icon-phone contact__icon"></i>
@@ -199,10 +203,12 @@
   </main>
 
   <footer class="footer">
-    <div class="container">
-      <a class="footer__logo" href="#">beauty<span class="footer__logo--lightest">salon</span>.</a>
-      <p class="footer__copyright">©2021 Beautysalon.</p>
-      <p class="footer__rights">Todos os direitos reservados.</p>
+    <div class="footer__block">
+      <div class="footer__info">
+        <a class="footer__logo" href="#">beauty<span class="footer__logo--lightest">salon</span>.</a>
+        <p class="footer__copyright">©2021 Beautysalon.</p>
+        <p class="footer__rights">Todos os direitos reservados.</p>
+      </div>
       <ul class="footer__networks">
         <li class="footer__social">
           <a class="footer__link" href="https://www.instagram.com" target="_blank"><i class="icon-instagram footer__icon"></i></a>

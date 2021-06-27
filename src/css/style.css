@@ -28,6 +28,7 @@ li {
   --container-size: 87%;
   --horizontal-offset: 6.5%;
   --vertical-offset: 2.1rem;
+  --section-padding: 8rem;
   --border-radius: .4rem;
   --box-shadow: 0px 0px 12px rgba(0, 0, 0, 0.08);
 }
@@ -46,7 +47,7 @@ body {
 
 .container {
   margin: auto;
-  width: var(--container-size);
+  width: min(var(--container-size), 112rem);
 }
 
 .divider-1 {
@@ -183,16 +184,24 @@ body {
 }
 
 .hero {
-  padding: 8rem 0;
+  padding: var(--section-padding) 0;
   background: var(--color-neutral-lightest);
   overflow: hidden;
   padding: 7.2rem 0 8rem;
-  text-align: center;
+}
+.hero__block {
+  display: flex;
+  flex-direction: column;
 }
 .hero__figure {
+  margin-left: auto;
+  margin-right: auto;
+  text-align: center;
   line-height: 0;
+  max-width: 56rem;
   position: relative;
   right: 10%;
+  width: 103%;
   z-index: 1;
 }
 .hero__figure::before {
@@ -200,15 +209,25 @@ body {
   border-radius: var(--border-radius);
   bottom: 15%;
   content: "";
-  height: min(103%, 56rem);
+  height: 100%;
   left: 16%;
   position: absolute;
-  width: min(103%, 56rem);
+  width: 100%;
   z-index: -1;
 }
 .hero__photo {
   border-radius: var(--border-radius);
-  width: min(103%, 56rem);
+  max-width: 56rem;
+  width: 103%;
+}
+.hero__info {
+  margin: auto;
+  width: min(var(--container-size), 112rem);
+  align-items: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  text-align: center;
 }
 .hero__title {
   color: var(--color-black);
@@ -217,10 +236,12 @@ body {
   font-weight: 700;
   line-height: 1.5;
   margin-top: 3.2rem;
+  max-width: 33rem;
 }
 .hero__text {
   line-height: 1.5;
   margin-top: 1.6rem;
+  max-width: 30rem;
 }
 .hero__button {
   background: var(--color-primary);
@@ -238,13 +259,18 @@ body {
 }
 
 .about {
-  padding: 8rem 0;
+  padding: var(--section-padding) 0;
+  display: flex;
+  flex-direction: column;
+  gap: 3.2rem;
   overflow: hidden;
 }
 .about__figure {
   line-height: 0;
+  max-width: 61.5rem;
   position: relative;
   right: 3%;
+  width: 103%;
   z-index: 1;
 }
 .about__figure::before {
@@ -252,15 +278,20 @@ body {
   border-radius: var(--border-radius);
   bottom: 6%;
   content: "";
-  height: min(103%, 61.5rem);
+  height: 100%;
   position: absolute;
   right: 30%;
-  width: min(103%, 61.5rem);
+  width: 100%;
   z-index: -1;
 }
 .about__photo {
   border-radius: var(--border-radius);
-  width: min(103%, 61.5rem);
+  max-width: 61.5rem;
+  width: 103%;
+}
+.about__block {
+  margin: auto;
+  width: min(var(--container-size), 112rem);
 }
 .about__title {
   color: var(--color-black);
@@ -268,7 +299,6 @@ body {
   font-size: var(--title-size);
   font-weight: 700;
   line-height: 1.5;
-  margin-top: 3.2rem;
 }
 .about__text {
   margin-top: 2.8rem;
@@ -278,8 +308,14 @@ body {
 }
 
 .services {
-  padding: 8rem 0;
+  padding: var(--section-padding) 0;
   background: var(--color-neutral-lightest);
+}
+.services__block {
+  margin: auto;
+  width: min(var(--container-size), 112rem);
+  display: flex;
+  flex-direction: column;
 }
 .services__title {
   color: var(--color-black);
@@ -290,6 +326,7 @@ body {
 }
 .services__text {
   margin-top: 1.6rem;
+  max-width: 52rem;
 }
 .services__text--primary {
   color: var(--color-primary);
@@ -344,7 +381,7 @@ body {
 }
 
 .testimonials {
-  padding: 8rem 0;
+  padding: var(--section-padding) 0;
 }
 .testimonials__title {
   color: var(--color-black);
@@ -352,8 +389,12 @@ body {
   font-size: var(--title-size);
   font-weight: 700;
   line-height: 1.5;
-  margin: auto;
+  margin-left: var(--horizontal-offset);
+  max-width: 40rem;
   width: var(--container-size);
+}
+.testimonials__block {
+  margin-top: 4rem;
 }
 .testimonials__pagination {
   position: static;
@@ -361,7 +402,6 @@ body {
 
 .testimonial {
   display: grid;
-  margin-top: 4rem;
   height: auto;
 }
 .testimonial__figure {
@@ -369,7 +409,6 @@ body {
   width: var(--container-size);
 }
 .testimonial__quote {
-  background: white;
   border-radius: var(--border-radius);
   box-shadow: var(--box-shadow);
   display: flex;
@@ -413,8 +452,12 @@ body {
 }
 
 .contact {
-  padding: 8rem 0;
+  padding: var(--section-padding) 0;
   background: var(--color-neutral-lightest);
+}
+.contact__block {
+  margin: auto;
+  width: min(var(--container-size), 112rem);
 }
 .contact__title {
   color: var(--color-black);
@@ -422,9 +465,11 @@ body {
   font-size: var(--title-size);
   font-weight: 700;
   line-height: 1.5;
+  max-width: 27rem;
 }
 .contact__text {
   margin-top: 1.6rem;
+  max-width: 36rem;
 }
 .contact__button {
   background: var(--color-primary);
@@ -451,7 +496,8 @@ body {
   margin-right: 1.2rem;
 }
 .contact__list {
-  display: grid;
+  display: flex;
+  flex-direction: column;
   gap: 3.2rem;
   margin-top: 6.4rem;
 }
@@ -465,6 +511,10 @@ body {
   background: var(--color-primary);
   color: var(--color-neutral-lightest);
   padding: 6.4rem 0;
+}
+.footer__block {
+  margin: auto;
+  width: min(var(--container-size), 112rem);
 }
 .footer__logo {
   color: var(--color-black);
@@ -556,6 +606,87 @@ body {
   .service {
     flex: 1;
     min-width: 40%;
+  }
+}
+@media screen and (min-width: 768px) {
+  .testimonials__title {
+    margin: 0 auto;
+    text-align: center;
+  }
+  .testimonials__block {
+    width: var(--container-size);
+  }
+
+  .testimonial__figure {
+    width: 90%;
+  }
+}
+@media screen and (min-width: 1024px) {
+  :root {
+    --title-size: 3.6rem;
+    --section-padding: 12rem;
+  }
+
+  .subtitle {
+    font-size: 1.8rem;
+  }
+
+  .hero__block {
+    margin: auto;
+    width: min(var(--container-size), 112rem);
+    align-items: center;
+    flex-direction: row-reverse;
+    justify-content: space-between;
+  }
+  .hero__info {
+    align-items: flex-start;
+    text-align: left;
+    width: 100%;
+  }
+  .hero__title {
+    margin-top: 0;
+  }
+
+  .about {
+    flex-direction: row;
+    align-items: flex-start;
+  }
+  .about__figure {
+    flex: 1;
+  }
+  .about__block {
+    flex: 1;
+  }
+  .about__text {
+    width: 80%;
+  }
+
+  .services__block {
+    align-items: center;
+    text-align: center;
+  }
+  .services__deck {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+  }
+
+  .service {
+    min-width: none;
+  }
+
+  .contact__block {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+  }
+  .contact__list {
+    justify-content: center;
+    margin: 0;
+    margin-left: 6.4rem;
+  }
+
+  .footer__block {
+    display: flex;
+    justify-content: space-between;
   }
 }
 

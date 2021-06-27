@@ -4,5 +4,11 @@ const swiper = new Swiper('.swiper-container', {
     el: '.swiper-pagination'
   },
   // mousewheel: true,
-  keyboard: true
+  keyboard: true,
+  breakpoints: {
+    768: {
+      slidesPerView: 2,
+      // setWrapperSize: true
+    }
+  }
 });
